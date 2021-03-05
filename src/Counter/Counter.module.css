@@ -1,0 +1,30 @@
+.counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+  font-weight: bold;
+}
+
+.counter span {
+  color: #0065fe;
+  padding: 0 5px;
+}
+
+.counter button {
+  background-color: transparent;
+  outline: 0;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #33353b;
+  transition: background-color 0.1s linear;
+}
+
+.counter button:active {
+  transform: translateY(1px);
+}
+
+.counter button:hover {
+  background-color: #212225;
+}

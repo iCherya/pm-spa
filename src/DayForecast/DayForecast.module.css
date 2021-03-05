@@ -1,0 +1,44 @@
+.day {
+  margin: 1em;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.day:not(:last-of-type) {
+  border-bottom: 1px dashed lightblue;
+}
+
+.day h3 {
+  text-transform: capitalize;
+  margin-bottom: 1em;
+}
+
+.results {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.results h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.results > li {
+  color: gray;
+  flex: 1 0 150px;
+  text-align: center;
+}
+
+.results li span {
+  color: black;
+}
+
+.iconWrapper {
+  width: 100px;
+  height: 90px;
+  margin: 0 auto;
+}

@@ -1,49 +1,40 @@
-.App {
-  background-color: rgb(255, 255, 255);
+.Retro {
+  background-color: rgb(30, 31, 35);
   border-radius: 10px;
   padding: 2em;
-  min-height: calc(100vh - 2em);
+  font-family: 'Helvetica Neue', 'Roboto', sans-serif;
+  color: #767b86;
+  font-size: 16px;
   box-shadow: 0 0.6px 2.7px rgba(0, 0, 0, 0.016),
     0 1.5px 6.9px rgba(0, 0, 0, 0.022), 0 3px 14.2px rgba(0, 0, 0, 0.028),
     0 6.2px 29.2px rgba(0, 0, 0, 0.034), 0 17px 80px rgba(0, 0, 0, 0.05);
 }
 
-.header {
+.top {
+  margin-bottom: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1em;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-  border-bottom: 1px dashed #73bfd2;
 }
 
 .heading {
-  display: flex;
+  color: #c6c6c8;
   font-size: 24px;
+  display: flex;
 }
 
 .heading:after {
-  content: 'React HW3';
-  background-color: #027f9e;
+  content: 'React HW2';
+  background-color: #143364;
   padding: 6px 10px;
-  color: whitesmoke;
+  color: #3a95fa;
   font-size: 14px;
   margin-left: 10px;
   border-radius: 5px;
 }
 
-.menu {
+.wrapper {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
+  justify-content: space-between;
   gap: 1em;
-}
-
-.content {
-  border: 1px dashed #73bfd2;
-  background-color: white;
-  border-radius: 10px;
-  padding: 1em;
 }

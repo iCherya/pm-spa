@@ -1,0 +1,9 @@
+.Weather {
+  padding: 1em;
+  margin: 0 auto;
+}
+
+.Weather h1 {
+  text-align: center;
+  color: white;
+}

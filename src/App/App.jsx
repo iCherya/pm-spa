@@ -2,6 +2,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import styles from './App.module.css';
+import Weather from '../Weather/Weather';
+import Retro from '../Retro/Retro';
 
 const App = () => {
   console.log('🚀 App component render 🚀');
@@ -74,22 +76,6 @@ function Home() {
         tenetur illo soluta voluptatem? Labore fuga ipsa eum laborum mollitia
         deserunt. Sapiente distinctio, quos eum esse maiores quo.
       </div>
-    </div>
-  );
-}
-
-function Weather() {
-  return (
-    <div>
-      <h2>Weather</h2>
-    </div>
-  );
-}
-
-function Retro() {
-  return (
-    <div>
-      <h2>Retro</h2>
     </div>
   );
 }
