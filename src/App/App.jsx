@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import styles from './App.module.css';
+import Homepage from '../Homepage/Homepage';
 import Weather from '../Weather/Weather';
 import Retro from '../Retro/Retro';
 
@@ -57,28 +58,13 @@ const App = () => {
             <Todos />
           </Route>
           <Route path="/">
-            <Home />
+            <Homepage />
           </Route>
         </Switch>
       </div>
     </BrowserRouter>
   );
 };
-
-function Home() {
-  return (
-    <div>
-      <h2>HOMEPAGE</h2>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis saepe
-        labore nam minima quos earum vero eum pariatur amet aliquid itaque minus
-        eveniet, natus eaque, voluptatum sunt vitae harum, sint doloribus ad
-        tenetur illo soluta voluptatem? Labore fuga ipsa eum laborum mollitia
-        deserunt. Sapiente distinctio, quos eum esse maiores quo.
-      </div>
-    </div>
-  );
-}
 
 function Todos() {
   return (
