@@ -1,34 +1,105 @@
+/* eslint-disable no-console */
 import React from 'react';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import styles from './App.module.css';
 
 const App = () => {
   console.log('🚀 App component render 🚀');
 
   return (
-    <div className={styles.App}>
-      <div className={styles.top}>
-        <h1 className={styles.heading}>React HW3</h1>
-        <ul className={styles.wrapper}>
-          <li>Weather App</li>
-          <li>Retrospective App</li>
-          <li>Todo List</li>
-        </ul>
+    <BrowserRouter>
+      <div className={styles.App}>
+        <nav className={styles.header}>
+          <h1 className={styles.heading}>
+            <NavLink to="/">Routing</NavLink>
+          </h1>
+          <ul className={styles.menu}>
+            <li>
+              <NavLink
+                to="/weather"
+                className={styles.link}
+                activeStyle={{ fontWeight: 'bold' }}
+              >
+                Weather
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/retro"
+                className={styles.link}
+                activeStyle={{ fontWeight: 'bold' }}
+              >
+                Retrospective
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/todos"
+                className={styles.link}
+                activeStyle={{ fontWeight: 'bold' }}
+              >
+                Todos
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/weather">
+            <Weather />
+          </Route>
+          <Route path="/retro">
+            <Retro />
+          </Route>
+          <Route path="/todos">
+            <Todos />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-      <div className={styles.wrapper}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo,
-        molestias! Illum repellat eos voluptates iste, cum veritatis magnam
-        dicta asperiores nihil! Et sit ipsa quibusdam officia, facilis
-        temporibus incidunt molestias dolor eius quam laboriosam veniam porro,
-        delectus optio corrupti deleniti aliquid. Totam quo non vel corrupti
-        illum ut maiores impedit, dolore optio nobis, earum praesentium. Animi
-        amet nam nemo odit facilis? Aut quis odit ab ipsam provident eaque
-        natus? Nobis dolores cupiditate quas rem quasi nisi distinctio impedit
-        sequi ut. Corporis, amet repellendus recusandae et voluptatibus totam.
-        Mollitia in sapiente laudantium vel soluta placeat quis, maiores odio,
-        nulla hic tempora.
+    </BrowserRouter>
+  );
+};
+
+function Home() {
+  return (
+    <div>
+      <h2>HOMEPAGE</h2>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis saepe
+        labore nam minima quos earum vero eum pariatur amet aliquid itaque minus
+        eveniet, natus eaque, voluptatum sunt vitae harum, sint doloribus ad
+        tenetur illo soluta voluptatem? Labore fuga ipsa eum laborum mollitia
+        deserunt. Sapiente distinctio, quos eum esse maiores quo.
       </div>
     </div>
   );
-};
+}
+
+function Weather() {
+  return (
+    <div>
+      <h2>Weather</h2>
+    </div>
+  );
+}
+
+function Retro() {
+  return (
+    <div>
+      <h2>Retro</h2>
+    </div>
+  );
+}
+
+function Todos() {
+  return (
+    <div>
+      <h2>Todos</h2>
+    </div>
+  );
+}
 
 export default App;

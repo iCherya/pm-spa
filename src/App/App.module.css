@@ -8,21 +8,40 @@
     0 6.2px 29.2px rgba(0, 0, 0, 0.034), 0 17px 80px rgba(0, 0, 0, 0.05);
 }
 
-.top {
-  margin-bottom: 1em;
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 1em;
 }
 
 .heading {
+  display: flex;
   font-size: 24px;
 }
 
-.wrapper {
+.heading:after {
+  content: 'React HW3';
+  background-color: #027f9e;
+  padding: 6px 10px;
+  color: whitesmoke;
+  font-size: 14px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.menu {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  align-items: baseline;
   gap: 1em;
+}
+
+.content {
+  border: 1px dashed #73bfd2;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1em;
 }
