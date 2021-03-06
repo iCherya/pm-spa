@@ -1,0 +1,54 @@
+.top {
+  margin: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.top form {
+  display: flex;
+  gap: 0.5em;
+}
+
+.top select,
+.top input,
+.top button {
+  padding: 0.5em 1em;
+  font-family: inherit;
+  border: 1px solid #027f9e;
+  outline: 0;
+  border-radius: 5px;
+  font-size: inherit;
+}
+
+.top select:focus,
+.top input:focus,
+.top button:focus {
+  box-shadow: 0 0 1px 3px #2ec7ee;
+}
+
+.top select {
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.top input::placeholder {
+  font-weight: 200;
+}
+
+.top button {
+  background-color: #027f9e;
+  border: 0;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.top button:hover {
+  background-color: #03a9d2;
+}
+
+.top button:active {
+  transform: translateY(1px);
+}
