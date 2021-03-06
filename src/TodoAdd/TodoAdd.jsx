@@ -6,10 +6,10 @@ class TodoAdd extends React.Component {
     this.state = { value: '' };
 
     this.submitHandler = this.submitHandler.bind(this);
-    this.changeTextHandler = this.changeTextHandler.bind(this);
+    this.inputChangedHandler = this.inputChangedHandler.bind(this);
   }
 
-  changeTextHandler(event) {
+  inputChangedHandler(event) {
     this.setState(() => {
       const { value } = event.target;
 
@@ -23,20 +23,21 @@ class TodoAdd extends React.Component {
     const { createNewTodo } = this.props;
     const { value } = this.state;
 
-    createNewTodo(value);
+    if (value === '') return;
 
+    createNewTodo(value);
     this.setState({ value: '' });
   }
 
   render() {
     const { value } = this.state;
-    const { submitHandler, changeTextHandler } = this;
+    const { submitHandler, inputChangedHandler } = this;
 
     return (
       <form onSubmit={submitHandler}>
         <input
           value={value}
-          onChange={changeTextHandler}
+          onChange={inputChangedHandler}
           type="text"
           placeholder="Type new todo here"
         />

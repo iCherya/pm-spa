@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const TodoSearch = () => {
-  console.log('TodoSearch rendered');
+const TodoSearch = ({ handleSearchInputChanged }) => {
+  const [value, setValue] = useState('');
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    handleSearchInputChanged(value);
+  };
 
   return (
-    <form>
-      <input type="text" placeholder="Search text in todos" />
+    <form onSubmit={(event) => submitHandler(event)}>
+      <input
+        onChange={(event) => setValue(event.target.value)}
+        type="text"
+        placeholder="Search text in todos"
+      />
       <button type="submit">Search</button>
     </form>
   );
