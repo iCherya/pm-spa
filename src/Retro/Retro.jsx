@@ -4,7 +4,7 @@ import styles from './Retro.module.css';
 import Board from '../Board/Board';
 import config from '../config';
 
-class App extends React.Component {
+class Retro extends React.Component {
   render() {
     const { BOARDS } = config;
 
@@ -24,4 +24,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Retro;

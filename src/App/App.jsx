@@ -5,6 +5,7 @@ import styles from './App.module.css';
 import Homepage from '../Homepage/Homepage';
 import Weather from '../Weather/Weather';
 import Retro from '../Retro/Retro';
+import Todos from '../Todos/Todos';
 
 const App = () => {
   console.log('🚀 App component render 🚀');
@@ -65,13 +66,5 @@ const App = () => {
     </BrowserRouter>
   );
 };
-
-function Todos() {
-  return (
-    <div>
-      <h2>Todos</h2>
-    </div>
-  );
-}
 
 export default App;

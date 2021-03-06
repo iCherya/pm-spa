@@ -4,7 +4,7 @@ import styles from './Weather.module.css';
 import WeekForecast from '../WeekForecast/WeekForecast';
 import config from '../config';
 
-class App extends React.Component {
+class Weather extends React.Component {
   render() {
     const { API, DAYS_TO_SHOW } = config;
 
@@ -17,4 +17,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Weather;
