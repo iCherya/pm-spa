@@ -30,13 +30,6 @@ class Todos extends React.Component {
       .then((id) => this.getUserTodosList(id));
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   const { userTodos } = this.state;
-  //   if (nextState.userTodos.length < userTodos.length) return false;
-
-  //   return true;
-  // }
-
   handleSelectedUser(event) {
     const id = event.target.value;
 
@@ -114,7 +107,7 @@ class Todos extends React.Component {
 
         <ul className={styles.content}>
           {userTodos.map(({ id, title, completed }) => (
-            <TodoItem key={id} text={title} completed={completed} />
+            <TodoItem key={id} id={id} title={title} completed={completed} />
           ))}
         </ul>
       </div>
