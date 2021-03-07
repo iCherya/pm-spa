@@ -28,7 +28,7 @@ const withTodoItem = (Component) => {
     }
 
     render() {
-      const { title } = this.props;
+      const { title, highlightSearchQuery } = this.props;
       const { completed } = this.state;
       const { handleTodoComplete } = this;
 
@@ -37,6 +37,7 @@ const withTodoItem = (Component) => {
           handleTodoComplete={handleTodoComplete}
           title={title}
           completed={completed}
+          highlightSearchQuery={highlightSearchQuery}
         />
       );
     }

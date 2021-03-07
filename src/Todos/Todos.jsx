@@ -9,11 +9,17 @@ import TodoSearch from '../TodoSearch/TodoSearch';
 class Todos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { users: [], selected: '', userTodos: [] };
+    this.state = {
+      users: [],
+      selectedUser: '',
+      userTodos: [],
+      searchQuery: ''
+    };
 
     this.handleSubmitNewTodo = this.handleSubmitNewTodo.bind(this);
     this.handleSubmitSearchQuery = this.handleSubmitSearchQuery.bind(this);
     this.handleSelectedUser = this.handleSelectedUser.bind(this);
+    this.highlightSearchQuery = this.highlightSearchQuery.bind(this);
   }
 
   componentDidMount() {
@@ -37,14 +43,14 @@ class Todos extends React.Component {
       const { users } = previousState;
       const user = users.find((el) => el.id === +id);
 
-      return { selected: user.id };
+      return { selectedUser: user.id };
     });
 
     this.getUserTodosList(id);
   }
 
   handleSubmitSearchQuery(text) {
-    console.log('Search for todo with query', text);
+    this.setState({ searchQuery: text });
   }
 
   handleSubmitNewTodo(text) {
@@ -76,13 +82,33 @@ class Todos extends React.Component {
       });
   }
 
+  highlightSearchQuery(text) {
+    const { searchQuery } = this.state;
+    if (!searchQuery) return text;
+
+    const split = text.toLowerCase().split(searchQuery.toLowerCase());
+
+    let highlighted = '';
+
+    for (let i = 0; i < split.length; i += 1) {
+      if (i === split.length - 1) {
+        highlighted += split[i];
+      } else {
+        highlighted += `${split[i]} <b>${searchQuery}</b>`;
+      }
+    }
+
+    return highlighted;
+  }
+
   render() {
     const {
       handleSubmitNewTodo,
       handleSubmitSearchQuery,
-      handleSelectedUser
+      handleSelectedUser,
+      highlightSearchQuery
     } = this;
-    const { users, selected, userTodos } = this.state;
+    const { users, selectedUser, userTodos } = this.state;
 
     return (
       <div>
@@ -91,7 +117,7 @@ class Todos extends React.Component {
         <div className={styles.top}>
           <select
             className={styles.select}
-            value={selected}
+            value={selectedUser}
             onChange={handleSelectedUser}
           >
             {users.map(({ id, name }) => (
@@ -107,7 +133,13 @@ class Todos extends React.Component {
 
         <ul className={styles.content}>
           {userTodos.map(({ id, title, completed }) => (
-            <TodoItem key={id} id={id} title={title} completed={completed} />
+            <TodoItem
+              key={id}
+              id={id}
+              title={title}
+              completed={completed}
+              highlightSearchQuery={highlightSearchQuery}
+            />
           ))}
         </ul>
       </div>
