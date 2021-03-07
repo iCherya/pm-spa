@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 
-const TodoSearch = ({ handleSearchInputChanged }) => {
-  const [value, setValue] = useState('');
+const TodoSearch = ({ handleSubmitSearchQuery }) => {
+  const [searchQuery, setSearchQuery] = useState('');
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    handleSearchInputChanged(value);
+    handleSubmitSearchQuery(searchQuery);
   };
 
   return (
-    <form onSubmit={(event) => submitHandler(event)}>
+    <form onSubmit={submitHandler}>
       <input
-        onChange={(event) => setValue(event.target.value)}
+        value={searchQuery}
+        onChange={(event) => setSearchQuery(event.target.value)}
         type="text"
         placeholder="Search text in todos"
       />

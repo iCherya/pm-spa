@@ -5,6 +5,8 @@ class TodoAdd extends React.Component {
     super(props);
     this.state = { value: '' };
 
+    this.inputRef = React.createRef();
+
     this.submitHandler = this.submitHandler.bind(this);
     this.inputChangedHandler = this.inputChangedHandler.bind(this);
   }
@@ -20,13 +22,15 @@ class TodoAdd extends React.Component {
   submitHandler(event) {
     event.preventDefault();
 
-    const { createNewTodo } = this.props;
+    this.inputRef.current.focus();
+    this.setState({ value: '' });
+
+    const { handleSubmitNewTodo } = this.props;
     const { value } = this.state;
 
     if (value === '') return;
 
-    createNewTodo(value);
-    this.setState({ value: '' });
+    handleSubmitNewTodo(value);
   }
 
   render() {
@@ -36,6 +40,7 @@ class TodoAdd extends React.Component {
     return (
       <form onSubmit={submitHandler}>
         <input
+          ref={this.inputRef}
           value={value}
           onChange={inputChangedHandler}
           type="text"

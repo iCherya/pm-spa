@@ -1,8 +1,35 @@
 .wrapper {
   display: flex;
-  gap: 1em;
+  gap: 2em;
+  padding: 10px 0;
+  border-bottom: 1px dashed #73bfd2;
+  align-items: center;
+}
+
+.wrapper:first-of-type {
+  border-top: 1px dashed #73bfd2;
+}
+
+.wrapper:hover {
+  background-color: #edfafd;
 }
 
 .text {
   flex: 1;
+}
+
+.button {
+  cursor: pointer;
+  outline: 0;
+  border-radius: 5px;
+  width: 2em;
+  height: 2em;
+}
+
+.button:focus {
+  box-shadow: 0 0 1px 2px #2ec7ee;
+}
+
+.completed {
+  text-decoration: line-through;
 }
