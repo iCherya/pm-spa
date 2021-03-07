@@ -2,22 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import styles from './Homepage.module.css';
 
-function App() {
-  return (
-    <div className={styles.Homepage}>
-      <header className={styles['Homepage-header']}>
-        <img src={logo} className={styles['Homepage-logo']} alt="logo" />
-        <a
-          className={styles['Homepage-link']}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div className={styles.wrapper}>
+    <header className={styles.content}>
+      <img src={logo} className={styles.logo} alt="React logo" />
+      <p className={styles.lin}>PM Academy HW13</p>
+    </header>
+  </div>
+);
 
 export default App;

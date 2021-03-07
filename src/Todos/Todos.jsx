@@ -1,5 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable class-methods-use-this */
 import React from 'react';
 import styles from './Todos.module.css';
 import TodoAdd from '../TodoAdd/TodoAdd';
@@ -33,7 +31,7 @@ class Todos extends React.Component {
 
         return selected;
       })
-      .then((id) => this.getUserTodosList(id));
+      .then((id) => this.getUserTodos(id));
   }
 
   handleSelectedUser(event) {
@@ -46,7 +44,7 @@ class Todos extends React.Component {
       return { selectedUser: user.id };
     });
 
-    this.getUserTodosList(id);
+    this.getUserTodos(id);
   }
 
   handleSubmitSearchQuery(text) {
@@ -58,7 +56,7 @@ class Todos extends React.Component {
     this.addUserTodoItem(selected, text);
   }
 
-  getUserTodosList(userId) {
+  getUserTodos(userId) {
     fetch(`https://jsonplaceholder.typicode.com/todos?userId=${userId}`)
       .then((response) => response.json())
       .then((data) => this.setState({ userTodos: data }));
@@ -111,7 +109,7 @@ class Todos extends React.Component {
     const { users, selectedUser, userTodos } = this.state;
 
     return (
-      <div>
+      <div className={styles.wrapper}>
         <h2>Todo List</h2>
 
         <div className={styles.top}>
@@ -132,10 +130,11 @@ class Todos extends React.Component {
         </div>
 
         <ul className={styles.content}>
-          {userTodos.map(({ id, title, completed }) => (
+          {userTodos.map(({ id, title, completed }, idx) => (
             <TodoItem
               key={id}
               id={id}
+              idx={idx + 1}
               title={title}
               completed={completed}
               highlightSearchQuery={highlightSearchQuery}

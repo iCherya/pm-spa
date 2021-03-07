@@ -20,18 +20,7 @@
 }
 
 .heading {
-  display: flex;
   font-size: 24px;
-}
-
-.heading:after {
-  content: 'React HW3';
-  background-color: #027f9e;
-  padding: 6px 10px;
-  color: whitesmoke;
-  font-size: 14px;
-  margin-left: 10px;
-  border-radius: 5px;
 }
 
 .menu {

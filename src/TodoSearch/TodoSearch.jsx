@@ -7,6 +7,7 @@ const TodoSearch = ({ handleSubmitSearchQuery }) => {
     event.preventDefault();
 
     handleSubmitSearchQuery(searchQuery);
+    setSearchQuery('');
   };
 
   return (

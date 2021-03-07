@@ -11,7 +11,12 @@
 }
 
 .wrapper:hover {
-  background-color: #edfafd;
+  background-color: #eff9fb;
+}
+
+.idx {
+  text-align: right;
+  width: 2em;
 }
 
 .text {
@@ -24,6 +29,13 @@
   border-radius: 5px;
   width: 2em;
   height: 2em;
+  border: 1px solid darkgray;
+  box-sizing: border-box;
+  background-color: #eeeeee;
+}
+
+.button:hover {
+  background-color: #e3e3e3;
 }
 
 .button:focus {

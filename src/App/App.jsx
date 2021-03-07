@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import styles from './App.module.css';
